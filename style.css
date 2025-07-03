@@ -1,15 +1,18 @@
 /* Reset & Base Styles */
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
   background: #121212;
   color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* Header */
@@ -20,6 +23,7 @@ body {
   padding: 20px;
   background: #1e1e1e;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -35,8 +39,10 @@ body {
   border: none;
   background: #2c2c2c;
   color: white;
+  margin-top: 10px;
 }
 
+/* Profile Section */
 .profile {
   position: relative;
 }
@@ -45,6 +51,7 @@ body {
   width: 45px;
   height: 45px;
   border-radius: 50%;
+  object-fit: cover;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -91,7 +98,7 @@ body {
   color: #00ffe1;
 }
 
-/* Main Layout */
+/* Layout */
 .main-layout {
   display: flex;
   min-height: 100vh;
@@ -102,6 +109,7 @@ body {
   width: 250px;
   background: #181818;
   padding: 20px;
+  flex-shrink: 0;
 }
 
 .sidebar h2 {
@@ -138,7 +146,22 @@ body {
 .content-area {
   flex: 1;
   padding: 20px;
-  overflow-x: hidden;
+}
+
+/* Playlist Title and Description */
+.playlist-header {
+  margin-bottom: 20px;
+}
+
+.playlist-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #00ffe1;
+}
+
+.playlist-header p {
+  font-size: 1rem;
+  color: #aaa;
 }
 
 /* Playlist Grid */
@@ -163,11 +186,13 @@ body {
 }
 
 .circle-card img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 10px;
   transition: transform 0.3s ease;
+  background: #2c2c2c;
 }
 
 .circle-card .info h3 {
@@ -211,6 +236,12 @@ body {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  #searchBar {
+    width: 200px;
+  }
+}
+
 @media (max-width: 768px) {
   .main-layout {
     flex-direction: column;
@@ -232,5 +263,22 @@ body {
   .playlist-wrapper {
     display: flex;
     gap: 15px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .playlist-wrapper .circle-card {
+    scroll-snap-align: start;
+  }
+
+  #searchBar {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
