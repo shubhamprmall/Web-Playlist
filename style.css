@@ -5,10 +5,11 @@
   box-sizing: border-box;
 }
 
+/* Body & Background */
 body {
-  background: linear-gradient(270deg, rgb(8, 8, 8), rgb(102, 102, 50), rgb(29, 16, 16), rgb(11, 12, 11));
-  background-size: 800% 800%;
-  animation: gradientShift 15s ease infinite;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  background-size: 400% 400%;
+  animation: techGradientShift 12s ease infinite;
   color: #fff;
   font-family: 'Segoe UI', sans-serif;
   transition: background 0.5s ease-in-out;
@@ -108,6 +109,7 @@ body {
   padding: 1rem 2rem;
   flex-wrap: nowrap;
   flex-direction: row;
+  min-height: calc(100vh - 140px);
 }
 
 .content-area {
@@ -197,7 +199,7 @@ body {
   color: #1db954;
 }
 
-/* Playlist */
+/* Playlist - Desktop & Tablet */
 .playlist {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -207,6 +209,7 @@ body {
   z-index: 10;
 }
 
+/* Playlist cards */
 .circle-card {
   display: flex;
   flex-direction: column;
@@ -216,6 +219,7 @@ body {
   text-decoration: none;
   color: white;
   transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 
 .circle-card img {
@@ -261,32 +265,34 @@ body {
   z-index: 100;
 }
 
-/* Category Titles */
-.category-section h2 {
-  font-size: 1.4rem;
-  color: #1db954;
-  padding-left: 0.5rem;
-  margin-bottom: 1rem;
-  border-left: 4px solid #1db954;
-}
-
-/* Horizontal scrolling */
-.horizontal-scroll {
-  display: flex;
-  gap: 2rem;
+/* Horizontal scrolling container for playlist on mobile */
+.playlist-wrapper {
+  display: none;
   overflow-x: auto;
   padding-bottom: 1rem;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #1db954 #222;
 }
 
-.horizontal-scroll::-webkit-scrollbar {
+.playlist-wrapper::-webkit-scrollbar {
   height: 6px;
 }
-.horizontal-scroll::-webkit-scrollbar-thumb {
+
+.playlist-wrapper::-webkit-scrollbar-thumb {
   background-color: #1db954;
   border-radius: 10px;
 }
 
+.playlist-wrapper .circle-card {
+  flex: 0 0 auto;
+}
+
 /* Media Queries */
+
+/* Tablet and smaller screens */
 @media (max-width: 1024px) {
   .main-layout {
     flex-direction: column;
@@ -314,20 +320,28 @@ body {
   }
 }
 
+/* Mobile: Optimized for Phones */
 @media (max-width: 600px) {
-  .header {
+  body {
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    background-size: 400% 400%;
+    animation: techGradientShift 10s ease infinite;
+    padding: 0;
+  }
+
+  .main-layout {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 0;
+    padding: 0.5rem;
+    min-height: 100vh;
   }
 
-  #searchBar {
+  .sidebar {
     width: 100%;
-    margin: 10px 0;
-  }
-
-  .playlist {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 1rem;
-  }
-
- 
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    background-color: #0e0e0e;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    scrollbar-width:
