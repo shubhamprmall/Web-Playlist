@@ -178,13 +178,54 @@ body {
   color: #ccc;
 }
 
-/* Playlist layout for circular cards */
+/* Remove unnecessary top margin from main layout */
+.main-layout {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem 2rem;
+  gap: 2rem;
+  margin-top: 0; /* 🔥 Yeh line fix karti hai */
+  flex-wrap: wrap;
+}
+
+/* If you had this earlier, remove it or keep 0 */
+.content-area {
+  flex: 1;
+  min-width: 300px;
+  margin-top: 0; /* 🔥 Extra space yahan se hatao */
+  padding-top: 0;
+}
+
+/* Sidebar spacing fix */
+.sidebar {
+  margin-top: 0;
+  top: 70px; /* Sticky top value agar needed ho toh */
+}
+
+
+/* Playlist properly visible without scroll */
 .playlist {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 2rem;
   justify-content: center;
+  padding: 1rem 0 4rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Responsive fixes */
+@media (max-width: 1024px) {
+  .main-layout {
+    flex-direction: column;
+    margin-top: 100px;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
 }
 
 
@@ -223,13 +264,7 @@ body {
 }
 
 /* ====== New Sidebar + Layout CSS ====== */
-
-.main-layout {
-  display: flex;
-  padding: 2rem;
-  gap: 2rem;
-}
-
+/* Sidebar container */
 .sidebar {
   width: 220px;
   background: #111;
@@ -237,33 +272,110 @@ body {
   padding: 1.5rem;
   position: sticky;
   top: 80px;
-  height: fit-content;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #1db954 #222;
 }
 
+/* Title above categories */
 .sidebar h2 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #1db954;
   margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
 }
 
+/* Main list container */
 .sidebar ul {
   list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 
-.sidebar ul li {
-  margin-bottom: 12px;
+/* Each category item */
+.sidebar ul > li {
+  margin-bottom: 8px;
 }
 
-.sidebar ul li a {
-  color: #ddd;
+/* Category header with emoji and nested list */
+.sidebar ul > li > a,
+.sidebar ul > li > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #eee;
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: 0.3s;
+  font-size: 1rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: default;
 }
 
-.sidebar ul li a:hover {
+/* Hover effect on clickable items */
+.sidebar ul > li > a:hover,
+.sidebar ul > li > span:hover {
+  background: #1db95420;
   color: #1db954;
+}
+
+/* Nested sub-list */
+.sidebar ul ul {
+  list-style: none;
+  padding-left: 16px;
+  margin: 4px 0 8px;
+  border-left: 2px solid #333;
+}
+
+/* Nested items */
+.sidebar ul ul li {
+  margin: 4px 0;
+}
+
+/* Nested links */
+.sidebar ul ul li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: #aaa;
+  text-decoration: none;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+/* Hover effect nested */
+.sidebar ul ul li a:hover {
+  background: #222;
+  color: #1db954;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 100%;
+    border-radius: 0;
+    padding: 1rem;
+    max-height: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar h2 {
+    font-size: 1.2rem;
+  }
+
+  .sidebar ul > li > a,
+  .sidebar ul > li > span {
+    font-size: 0.95rem;
+    padding: 5px 6px;
+  }
+
+  .sidebar ul ul li a {
+    font-size: 0.9rem;
+    padding: 4px 5px;
+  }
 }
 
 .content-area {
