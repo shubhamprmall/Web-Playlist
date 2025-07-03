@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Playlist</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+<header class="header">
+  <div class="logo">
+    Web Playlist
+  </div>
+  <input type="text" id="searchBar" placeholder="Search playlist..." />
+  <div class="profile">
+    <img src="sp.png" alt="Profile Picture" />
+    <div class="tooltip">
+      <h4>Shubham Pr Mall</h4>
+      <p>Technology Enthusiast</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/shubham_pr_mall/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/shubham-pratap-mall-6a678234b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/shubhamprmall" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <main class="main-layout">
+  <!-- Sidebar -->
+ <aside class="sidebar">
+  <h2>Categories</h2>
+  <ul>
+
+    <li>🎬 Entertainment
+      <ul>
+        <li><a href="https://www.amazon.in/" target="_blank">Amazon</a></li>
+        <li><a href="https://www.hotstar.com/in/home" target="_blank">JioHotstar</a></li>
+        <li><a href="https://www.netflix.com/in/" target="_blank">Netflix</a></li>
+        <li><a href="https://www.primevideo.com/offers/nonprimehomepage/ref=dv_web_force_root" target="_blank">Prime Video</a></li>
+        <li><a href="https://open.spotify.com/" target="_blank">Spotify</a></li>
+      </ul>
+    </li>
+
+    <li>🏛️ Government
+      <ul>
+        <li><a href="https://uidai.gov.in/" target="_blank">UIDAI</a></li>
+      </ul>
+    </li>
+
+    <li>🌐 Google
+      <ul>
+        <li><a href="https://chatgpt.com/" target="_blank">ChatGPT</a></li>
+        <li><a href="https://www.gmail.com" target="_blank">Gmail</a></li>
+        <li><a href="https://www.google.com/" target="_blank">Google</a></li>
+      </ul>
+    </li>
+
+    <li>📰 News
+      <ul>
+        <li><a href="https://www.aajtak.in/" target="_blank">Aaj Tak</a></li>
+        <li><a href="https://www.abplive.com/" target="_blank">ABP News</a></li>
+        <li><a href="https://www.indiatoday.in/" target="_blank">India Today</a></li>
+        <li><a href="https://hindi.news18.com" target="_blank">News18</a></li>
+        <li><a href="https://zeenews.india.com" target="_blank">Zee News</a></li>
+      </ul>
+    </li>
+
+    <li>📱 Social Media
+      <ul>
+        <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.quora.com/" target="_blank">Quora</a></li>
+        <li><a href="https://www.threads.com/?hl=en" target="_blank">Threads</a></li>
+        <li><a href="https://x.com/" target="_blank">Twitter (X)</a></li>
+        <li><a href="https://www.youtube.com/" target="_blank">YouTube</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</aside>
+
+
+
+  <!-- Cards Area -->
+  <section class="content-area">
+
+   <section class="playlist" id="playlist">
+  <!-- Circular Card -->
+   <a href="https://www.aajtak.in/" class="circle-card" target="_blank">
+  <img src="Aaj_tak.png"/>
+  <div class="info">
+    <h3>Aaj Tak</h3>
+    <p>Sabse Tez</p>
+  </div>
+</a>
+
+<a href="https://www.abplive.com/" class="circle-card" target="_blank">
+  <img src="ABP.png" />
+  <div class="info">
+    <h3>ABP News</h3>
+    <p>On the Ground</p>
+  </div>
+</a>
+
+<a href="https://www.amazon.in/" class="circle-card" target="_blank">
+  <img src="amazon-icon.webp"/>
+  <div class="info">
+    <h3>Amazon</h3>
+    <p>Shop Smile Repeat</p>
+  </div>
+</a>
+
+<a href="https://chatgpt.com/" class="circle-card" target="_blank">
+  <img src="chatgpt-icon.webp"/>
+  <div class="info">
+    <h3>ChatGPT</h3>
+    <p>Ideas Unlocked</p>
+  </div>
+</a>
+
+<a href="https://www.facebook.com/" class="circle-card" target="_blank">
+  <img src="icons8-facebook-50.png"/>
+  <div class="info">
+    <h3>Facebook</h3>
+    <p>Connect & Share</p>
+  </div>
+</a>
+
+<a href="https://www.gmail.com" class="circle-card" target="_blank">
+  <img src="gmail-icon.webp"/>
+  <div class="info">
+    <h3>Gmail</h3>
+    <p>Inbox Universe</p>
+  </div>
+</a> 
+
+<a href="https://www.google.com/" class="circle-card" target="_blank">
+  <img src="google.png" />
+  <div class="info">
+    <h3>Google</h3>
+    <p>Infinite Curiosity</p>
+  </div>
+</a>
+
+<a href="https://www.hotstar.com/in/home" class="circle-card" target="_blank">
+  <img src="jiohotstar-logo.webp"/>
+  <div class="info">
+    <h3>JioHotstar</h3>
+    <p>Entertainment Hub</p>
+  </div>
+</a>
+
+<a href="https://www.indiatoday.in/" class="circle-card" target="_blank">
+  <img src="india-today.png"/>
+  <div class="info">
+    <h3>India Today</h3>
+    <p>Truth in Focus</p>
+  </div>
+</a>
+
+<a href="https://www.instagram.com/" class="circle-card" target="_blank">
+  <img src="icons8-instagram-50.png"/>
+  <div class="info">
+    <h3>Instagram</h3>
+    <p>Life in Frames</p>
+  </div>
+</a>
+
+<a href="https://www.linkedin.com/" class="circle-card" target="_blank">
+  <img src="icons8-linkedin-circled-50.png"/>
+  <div class="info">
+    <h3>Linkedin</h3>
+    <p>Professional Pulse</p>
+  </div>
+</a>
+
+<a href="https://www.netflix.com/in/" class="circle-card" target="_blank">
+  <img src="netflix-icon.png"/>
+  <div class="info">
+    <h3>Netflix</h3>
+    <p>Stories Without Limits</p>
+  </div>
+</a>
+
+<a href="https://hindi.news18.com" class="circle-card" target="_blank">
+  <img src="news18-india.png"/>
+  <div class="info">
+    <h3>News18</h3>
+    <p>Breaking Boundaries</p>
+  </div>
+</a>
+
+<a href="https://open.spotify.com/" class="circle-card" target="_blank">
+  <img src="spotify.png"/>
+  <div class="info">
+    <h3>Spotify</h3>
+    <p>Feel Every Beat</p>
+  </div>
+</a>
+
+<a href="https://www.primevideo.com/offers/nonprimehomepage/ref=dv_web_force_root" class="circle-card" target="_blank">
+  <img src="amazon-prime-icon.jpg"/>
+  <div class="info">
+    <h3>Prime Video</h3>
+    <p>Stream Beyond Ordinary</p>
+  </div>
+</a>
+
+<a href="https://www.quora.com/" class="circle-card" target="_blank">
+  <img src="quora.png"/>
+  <div class="info">
+    <h3>Quora</h3>
+    <p>Fuel Your Curiosity with Truth</p>
+  </div>
+</a>
+
+<a href="https://www.threads.com/?hl=en" class="circle-card" target="_blank">
+  <img src="Threads.png" />
+  <div class="info">
+    <h3>Threads</h3>
+    <p>Fresh Takes</p>
+  </div>
+</a>
+
+<a href="https://x.com/" class="circle-card" target="_blank">
+  <img src="icons8-twitter-circled-50.png" />
+  <div class="info">
+    <h3>Twitter</h3>
+    <p>Voices in Motion</p>
+  </div>
+</a>
+
+<a href="https://uidai.gov.in/" class="circle-card" target="_blank">
+  <img src="uidai.png"/>
+  <div class="info">
+    <h3>Uidai</h3>
+    <p>Aadhaar</p>
+  </div>
+</a>
+
+<a href="https://www.youtube.com/" class="circle-card" target="_blank">
+  <img src="icons8-youtube-50.png" />
+  <div class="info">
+    <h3>YouTube</h3>
+    <p>Play On Repeat</p>
+  </div>
+</a>
+
+<a href="https://zeenews.india.com" class="circle-card" target="_blank">
+  <img src="Zee News.png" />
+  <div class="info">
+    <h3>Zee News</h3>
+    <p>Nation Speaks</p>
+  </div>
+</a>
+
+
+</section>
+
+  </main>
+</body>
+<footer class="footer">
+  <p>&copy; 2025 Shubham Pr Mall. All rights reserved.</p>
+</footer>
+
+
+</html>
