@@ -8,11 +8,34 @@
 }
 
 body {
-  background: #121212;
+  background: linear-gradient(270deg,
+    #ffde59,   /* yellow */
+    #00ffab,   /* aqua green */
+    #ff6b6b,   /* soft red */
+    #4facfe,   /* blue sky */
+    #00c9ff,   /* light cyan */
+    #ffffff,   /* white */
+    #0f0f0f    /* black */
+  );
+  background-size: 1400% 1400%;
+  animation: gradientFlow 20s ease infinite;
   color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+/* Gradient Animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Header */
@@ -20,26 +43,28 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: #1e1e1e;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #272626, #171a20);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   flex-wrap: wrap;
+  row-gap: 10px;
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #00ffe1;
+  color: #ffffff;
 }
 
 #searchBar {
   padding: 10px;
   width: 250px;
+  max-width: 100%;
   border-radius: 5px;
   border: none;
   background: #2c2c2c;
   color: white;
-  margin-top: 10px;
+  margin-top: 0;
 }
 
 /* Profile Section */
@@ -102,18 +127,19 @@ body {
 .main-layout {
   display: flex;
   min-height: 100vh;
+  flex-wrap: wrap;
 }
 
 /* Sidebar */
 .sidebar {
   width: 250px;
-  background: #181818;
+  background: linear-gradient(180deg, #11446e, #19202e);
   padding: 20px;
   flex-shrink: 0;
 }
 
 .sidebar h2 {
-  color: #00ffe1;
+  color: #ff9100;
   margin-bottom: 15px;
 }
 
@@ -146,6 +172,7 @@ body {
 .content-area {
   flex: 1;
   padding: 20px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
 }
 
 /* Playlist Title and Description */
@@ -170,12 +197,13 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: flex-start;
+  overflow: visible;
 }
 
+/* Circle Card */
 .circle-card {
   background: #1c1c1c;
   border-radius: 15px;
-  overflow: hidden;
   text-align: center;
   width: 160px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -183,6 +211,11 @@ body {
   text-decoration: none;
   color: white;
   padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 220px;
 }
 
 .circle-card img {
@@ -198,11 +231,21 @@ body {
 .circle-card .info h3 {
   margin: 10px 0 5px;
   font-size: 1.1rem;
+  color: #00ffe1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 .circle-card .info p {
   font-size: 0.85rem;
   color: #bbb;
+  word-break: break-word;
+  line-height: 1.4;
+  max-height: 4.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .circle-card:hover {
@@ -220,6 +263,8 @@ body {
   display: none;
   overflow-x: auto;
   padding: 10px 0;
+  gap: 15px;
+  overflow: visible;
 }
 
 .playlist-wrapper .circle-card {
@@ -228,7 +273,7 @@ body {
 
 /* Footer */
 .footer {
-  background: #1e1e1e;
+  background: linear-gradient(90deg, #0f0f0f, #1a1a1a);
   color: #888;
   text-align: center;
   padding: 20px;
@@ -274,11 +319,13 @@ body {
 
   #searchBar {
     width: 100%;
-    margin-top: 15px;
+    margin-top: 10px;
   }
 
   .header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
   }
 }
