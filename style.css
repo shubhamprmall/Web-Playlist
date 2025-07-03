@@ -12,61 +12,31 @@ body {
   color: #fff;
   font-family: 'Segoe UI', sans-serif;
   transition: background 0.5s ease-in-out;
+  padding-bottom: 60px; /* for footer spacing */
 }
-
 
 /* Header */
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #1e1e1e;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #000;
+  border-bottom: 1px solid #222;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 .logo {
-  font-size: 1.5rem;
-  color: #f4f5f2;
-}
-
-#searchBar {
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  border: none;
-  width: 40%;
-  background: #2c2c2c;
-  color: white;
-  outline: none;
-}
-
-/* Header Flex Layout */
-/* Header Flex Layout */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  background-color: #000; /* Black background */
-  border-bottom: 1px solid #222;
-  gap: 10px;
-}
-
-/* Logo / Title */
-.logo {
   font-size: 20px;
   font-weight: bold;
-  color: #fff; /* White text */
+  color: #fff;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-
-/* Search bar - responsive and compact */
 #searchBar {
   flex: 1;
   max-width: 400px;
@@ -76,9 +46,11 @@ body {
   border-radius: 20px;
   outline: none;
   margin: 0 10px;
+  background: #2c2c2c;
+  color: white;
 }
 
-/* Profile image & tooltip (from earlier) */
+/* Profile image & tooltip */
 .profile {
   position: relative;
   display: flex;
@@ -94,7 +66,6 @@ body {
   border: 1px solid #aaa;
 }
 
-/* Tooltip style remains same as before */
 .tooltip {
   position: absolute;
   top: 45px;
@@ -116,8 +87,6 @@ body {
   visibility: visible;
 }
 
-
-/* Social icons inside tooltip */
 .social-links a {
   margin-right: 10px;
   color: #555;
@@ -126,19 +95,117 @@ body {
 }
 
 .social-links a:hover {
-  color: #0073b1; /* LinkedIn blue on hover */
+  color: #1db954;
 }
 
+/* Layout */
+.main-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  margin-top: 0;
+}
+
+.content-area {
+  flex: 1;
+  min-width: 300px;
+  margin-top: 0;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #111;
+  border-radius: 10px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 80px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #1db954 #222;
+}
+
+.sidebar h2 {
+  font-size: 1.3rem;
+  color: #1db954;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.sidebar ul > li {
+  margin-bottom: 8px;
+}
+
+.sidebar ul > li > a,
+.sidebar ul > li > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #eee;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sidebar ul > li > a:hover,
+.sidebar ul > li > span:hover {
+  background: #1db95420;
+  color: #1db954;
+}
+
+.sidebar ul ul {
+  list-style: none;
+  padding-left: 16px;
+  margin: 4px 0 8px;
+  border-left: 2px solid #333;
+}
+
+.sidebar ul ul li {
+  margin: 4px 0;
+}
+
+.sidebar ul ul li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: #aaa;
+  text-decoration: none;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.sidebar ul ul li a:hover {
+  background: #222;
+  color: #1db954;
+}
 
 /* Playlist */
 .playlist {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0 4rem;
+  position: relative;
+  z-index: 10;
 }
 
-/* New circular style card */
 .circle-card {
   display: flex;
   flex-direction: column;
@@ -178,77 +245,7 @@ body {
   color: #ccc;
 }
 
-/* Remove unnecessary top margin from main layout */
-.main-layout {
-  display: flex;
-  align-items: flex-start;
-  padding: 1rem 2rem;
-  gap: 2rem;
-  margin-top: 0; /* 🔥 Yeh line fix karti hai */
-  flex-wrap: wrap;
-}
-
-/* If you had this earlier, remove it or keep 0 */
-.content-area {
-  flex: 1;
-  min-width: 300px;
-  margin-top: 0; /* 🔥 Extra space yahan se hatao */
-  padding-top: 0;
-}
-
-/* Sidebar spacing fix */
-.sidebar {
-  margin-top: 0;
-  top: 70px; /* Sticky top value agar needed ho toh */
-}
-
-
-/* Playlist properly visible without scroll */
-.playlist {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  padding: 1rem 0 4rem;
-  position: relative;
-  z-index: 10;
-}
-
-/* Responsive fixes */
-@media (max-width: 1024px) {
-  .main-layout {
-    flex-direction: column;
-    margin-top: 100px;
-  }
-
-  .sidebar {
-    width: 100%;
-    position: relative;
-    top: 0;
-  }
-}
-
-
-
-.info {
-  padding: 1rem;
-}
-
-.info h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  color: #1db954;
-}
-
-.info p {
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-body {
-  padding-bottom: 60px; /* adjust as per footer height */
-}
-
+/* Footer */
 .footer {
   position: fixed;
   bottom: 0;
@@ -263,101 +260,55 @@ body {
   z-index: 100;
 }
 
-/* ====== New Sidebar + Layout CSS ====== */
-/* Sidebar container */
-.sidebar {
-  width: 220px;
-  background: #111;
-  border-radius: 10px;
-  padding: 1.5rem;
-  position: sticky;
-  top: 80px;
-  max-height: calc(100vh - 100px);
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #1db954 #222;
-}
-
-/* Title above categories */
-.sidebar h2 {
-  font-size: 1.3rem;
+/* Category Titles */
+.category-section h2 {
+  font-size: 1.4rem;
   color: #1db954;
+  padding-left: 0.5rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #333;
-  padding-bottom: 0.5rem;
+  border-left: 4px solid #1db954;
 }
 
-/* Main list container */
-.sidebar ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
+/* Horizontal scrolling for special sections */
+.horizontal-scroll {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
 }
 
-/* Each category item */
-.sidebar ul > li {
-  margin-bottom: 8px;
+.horizontal-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background-color: #1db954;
+  border-radius: 10px;
 }
 
-/* Category header with emoji and nested list */
-.sidebar ul > li > a,
-.sidebar ul > li > span {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #eee;
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 6px 8px;
-  border-radius: 6px;
-  cursor: default;
-}
-
-/* Hover effect on clickable items */
-.sidebar ul > li > a:hover,
-.sidebar ul > li > span:hover {
-  background: #1db95420;
-  color: #1db954;
-}
-
-/* Nested sub-list */
-.sidebar ul ul {
-  list-style: none;
-  padding-left: 16px;
-  margin: 4px 0 8px;
-  border-left: 2px solid #333;
-}
-
-/* Nested items */
-.sidebar ul ul li {
-  margin: 4px 0;
-}
-
-/* Nested links */
-.sidebar ul ul li a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.95rem;
-  color: #aaa;
-  text-decoration: none;
-  padding: 4px 6px;
-  border-radius: 4px;
-}
-
-/* Hover effect nested */
-.sidebar ul ul li a:hover {
-  background: #222;
-  color: #1db954;
-}
-
-/* Responsive adjustments */
+/* Media Queries for Responsive Layout */
 @media (max-width: 1024px) {
+  .main-layout {
+    flex-direction: column;
+    margin-top: 0;
+    padding: 1rem;
+  }
+
   .sidebar {
     width: 100%;
+    position: relative;
+    top: 0;
     border-radius: 0;
-    padding: 1rem;
     max-height: none;
+  }
+
+  .playlist {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .circle-card img {
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -376,54 +327,19 @@ body {
     font-size: 0.9rem;
     padding: 4px 5px;
   }
-}
 
-.content-area {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
+  .playlist {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+  }
 
-.category-section h2 {
-  font-size: 1.4rem;
-  color: #1db954;
-  padding-left: 0.5rem;
-  margin-bottom: 1rem;
-  border-left: 4px solid #1db954;
-}
+  .circle-card img {
+    width: 90px;
+    height: 90px;
+  }
 
-/* Horizontal scrolling cards */
-.horizontal-scroll {
-  display: flex;
-  gap: 2rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-}
+  .circle-card .info h3 {
+    font-size: 0.85rem;
+  }
 
-.horizontal-scroll::-webkit-scrollbar {
-  height: 6px;
-}
-.horizontal-scroll::-webkit-scrollbar-thumb {
-  background-color: #1db954;
-  border-radius: 10px;
-}
-.sidebar ul ul {
-  margin-left: 15px;
-  padding-left: 10px;
-  border-left: 1px solid #444;
-}
-
-.sidebar ul ul li {
-  margin: 5px 0;
-  font-size: 14px;
-}
-
-.sidebar ul ul li a {
-  color: #aaa;
-  text-decoration: none;
-}
-
-.sidebar ul ul li a:hover {
-  color: #1db954;
-}
+  .
