@@ -286,3 +286,27 @@ body {
     margin-top: 10px;
   }
 }
+/* Ensure layout fills full height */
+html, body {
+  height: 100%;
+}
+
+/* Layout wrapper */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Let content-area grow and push footer down */
+.content-area {
+  flex: 1;
+}
+
+/* Remove any body padding/margin that could cause extra space */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
