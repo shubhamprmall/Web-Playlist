@@ -25,6 +25,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+  const searchBar = document.getElementById('searchBar');
+  const cards = document.querySelectorAll('.circle-card');
+
+  searchBar.addEventListener('input', () => {
+    const searchTerm = searchBar.value.toLowerCase();
+    cards.forEach(card => {
+      const title = card.querySelector('h3').textContent.toLowerCase();
+      const desc = card.querySelector('p').textContent.toLowerCase();
+      card.style.display = (title.includes(searchTerm) || desc.includes(searchTerm)) ? 'flex' : 'none';
+    });
+  });
+
+
+  // Image preload
+  const img = new Image();
+  img.src = 'logo.webp'; // Use WebP for better speed
+  img.alt = 'Logo';
+  img.width = 150;
+  img.height = 50;
+
+  // Jab image load ho jaye, tab hi DOM me add karo
+  img.onload = function () {
+    document.getElementById('logo-container').appendChild(img);
+  };
+
 
 
 
